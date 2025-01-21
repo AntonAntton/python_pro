@@ -1,0 +1,47 @@
+from typing import Type
+
+
+def analyze_inheritance(cls: Type) -> None:
+    """
+    Аналізує ієрархію наслідування наданого класу та виводить методи, які 
+    успадковані, але не переозначені в класі.
+
+    Аргументи:
+    - cls (Type): Клас для аналізу успадкованих методів.
+
+    Виводить:
+    - Список успадкованих методів з базових класів, які не були переозначені в класі.
+    """
+    print(f'Клас {cls.__name__} наслідує:')
+
+    base_methods = {}
+    for base in cls.__bases__:
+        for attr in dir(base):
+            if callable(getattr(base, attr)) and not attr.startswith("__"):
+                base_methods[attr] = base.__name__
+
+    inherited_methods = []
+    for method, base_name in base_methods.items():
+        # Перевірка, чи метод не переозначений в поточному класі
+        if method not in cls.__dict__:
+            inherited_methods.append((method, base_name))
+
+    if inherited_methods:
+        for method, base_name in inherited_methods:
+            print(f'- {method} з {base_name}')
+    else:
+        print('Клас не наслідує жодних методів.')
+
+
+# Приклад використання
+class Parent:
+    def parent_method(self):
+        pass
+
+
+class Child(Parent):
+    def child_method(self):
+        pass
+
+
+analyze_inheritance(Child)
