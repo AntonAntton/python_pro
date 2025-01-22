@@ -21,7 +21,7 @@ class DynamicProperties:
             """
             Сеттер для властивості.
             """
-            self._properties[name] = value
+            self.properties[name] = value
 
         # Створення властивості та динамічне додавання до класу
         setattr(self.__class__, name, property(getter, setter))
