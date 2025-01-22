@@ -11,7 +11,7 @@ def analyze_module(module_name: str) -> None:
         # Завантажуємо модуль за допомогою importlib
         module = importlib.import_module(module_name)
     except ModuleNotFoundError:
-        print(f"Модуль '{module_name}' не знайдений.")
+        print(f"Mudule '{module_name}' not found.")
         return
 
     # Отримуємо функції (включаючи викликаються об'єкти) з модуля
