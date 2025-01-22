@@ -3,7 +3,7 @@ class DynamicProperties:
         """
         Ініціалізує клас DynamicProperties, який містить словник для збереження властивостей.
         """
-        self._properties = {}
+        self.properties = {}
 
     def add_property(self, name: str, default_value: str) -> None:
         """
@@ -14,7 +14,7 @@ class DynamicProperties:
             """
             Геттер для властивості.
             """
-            return self._properties.get(name, default_value)
+            return self.properties.get(name, default_value)
 
         # Визначення сеттера
         def setter(self, value: str) -> None:
