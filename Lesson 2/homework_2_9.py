@@ -8,16 +8,11 @@ class DynamicProperties:
     def add_property(self, name: str, default_value: str) -> None:
         """
         Додає динамічну властивість до об'єкта. Визначає геттери та сеттери для властивості.
-
-        :param name: Назва нової властивості.
-        :param default_value: Значення за замовчуванням для нової властивості.
         """
         # Визначення геттера
         def getter(self) -> str:
             """
             Геттер для властивості.
-
-            :return: Поточне значення властивості або значення за замовчуванням.
             """
             return self._properties.get(name, default_value)
 
@@ -25,8 +20,6 @@ class DynamicProperties:
         def setter(self, value: str) -> None:
             """
             Сеттер для властивості.
-
-            :param value: Нове значення властивості.
             """
             self._properties[name] = value
 
