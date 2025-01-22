@@ -18,7 +18,7 @@ def analyze_inheritance(cls: Type) -> None:
     for method, base_name in base_methods.items():
         # Перевірка, чи метод не переозначений в поточному класі
         if method not in cls.__dict__:
-            inherited_methods.append((method, base_name))
+            inherited_methods.append(method, base_name)
 
     if inherited_methods:
         for method, base_name in inherited_methods:
