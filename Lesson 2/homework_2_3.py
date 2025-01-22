@@ -28,7 +28,7 @@ def analyze_module(module_name: str) -> None:
                 signature = inspect.signature(func)
                 print(f"- {func.__name__}{signature}")
             except (ValueError, TypeError):
-                print(f"- {func.__name__} (підпис недоступний)")
+                print(f"- {func.__name__} (signture without access)")
     else:
         print("Function is not found in module.")
         
