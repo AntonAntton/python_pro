@@ -29,5 +29,5 @@ def call_function(obj: object, method_name: str, *args: int) -> int:
 
 # Приклад використання
 calc = Calculator()
-print(call_function(calc, "add", 10, 5))  # Виведе 15
-print(call_function(calc, "substract", 10, 5))  # Виведе 5
+print(call_function(calc, "add", 10, 5))
+print(call_function(calc, "substract", 10, 5))
