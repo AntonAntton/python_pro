@@ -24,7 +24,7 @@ def analyze_inheritance(cls: Type) -> None:
         for method, base_name in inherited_methods:
             print(f'- {method} with {base_name}')
     else:
-        print('Class doesn't inherent any methods.')
+        print('Class does not inherent any methods.')
          
 
 
