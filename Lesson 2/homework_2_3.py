@@ -6,9 +6,6 @@ from typing import List, Optional
 def analyze_module(module_name: str) -> None:
     """
     Аналізує заданий модуль, виводячи його функції та класи.
-
-    :param module_name: Назва модуля, який потрібно проаналізувати.
-    :return: Нічого не повертає (None).
     """
     try:
         # Завантажуємо модуль за допомогою importlib
@@ -23,7 +20,7 @@ def analyze_module(module_name: str) -> None:
     # Отримуємо класи з модуля
     classes: List[type] = [obj for name, obj in inspect.getmembers(module, inspect.isclass)]
 
-    print("Функції:")
+    print("Functions:")
     if functions:
         for func in functions:
             try:
@@ -33,17 +30,17 @@ def analyze_module(module_name: str) -> None:
             except (ValueError, TypeError):
                 print(f"- {func.__name__} (підпис недоступний)")
     else:
-        print("- Функції не знайдені в модулі.")
+        print("Function is not found in module.")
+        
 
-    print("\nКласи:")
+    print("\nClasses:")
     if classes:
         for cls in classes:
             print(f"- {cls.__name__}")
     else:
-        print("- Класи не знайдені в модулі.")
-
+        print("Classes are not found in module.")
 
 # Приклад використання
 if __name__ == "__main__":
-    module_name = input("Введіть назву модуля: ")
+    module_name = input("Enter module: ")
     analyze_module(module_name)
