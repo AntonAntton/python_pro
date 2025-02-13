@@ -1,6 +1,7 @@
 import os
 from typing import Iterator, Tuple
 
+
 class DirectoryFileIterator:
     """Ітератор для перебору всіх файлів у заданому каталозі."""
 
