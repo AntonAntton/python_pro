@@ -72,7 +72,6 @@ class FileBackupManager:
 
 
 # Приклад використання:
-
 def example_process(file_path: str, temp_file_path: str) -> bool:
     """
     Приклад функції для обробки файлу.
