@@ -4,17 +4,12 @@ class Proxy:
     def __init__(self, obj: object) -> None:
         """
         Ініціалізує об'єкт Proxy з цільовим об'єктом.
-
-        :param obj: Цільовий об'єкт, методи якого будуть перехоплюватися.
         """
         self.obj = obj
 
     def __getattr__(self, name: str) -> callable:
         """
         Перехоплює доступ до атрибутів і обгортає викликаються атрибути для логування викликів методів.
-
-        :param name: Назва атрибута (методу).
-        :return: Обгорнута функція (метод) з логуванням.
         """
         # Отримуємо метод з оригінального об'єкта
         method = getattr(self.obj, name)
@@ -23,10 +18,6 @@ class Proxy:
         def wrapper(*args, **kwargs) -> object:
             """
             Логування виклику методу.
-
-            :param args: Параметри для методу.
-            :param kwargs: Іменовані параметри для методу.
-            :return: Повертає результат виклику оригінального методу.
             """
             print(f"Calling method: {name} with args: {args}")
             return method(*args, **kwargs)
