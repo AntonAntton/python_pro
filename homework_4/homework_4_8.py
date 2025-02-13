@@ -41,6 +41,7 @@ class ConfigManager:
             json.dump(self.config_data, file, indent=4, ensure_ascii=False)
 
         self.config_data = None
+        
 
 # Робота з JSON
 with ConfigManager("/Users/anton01.16.23/Desktop/sample1.json") as config:
