@@ -2,6 +2,7 @@ class ProductWithGetSet:
     """
     Клас, що реалізує встановлення та отримання ціни товару через методи get_price() і set_price().
     """
+    
     def __init__(self, name: str, price: float) -> None:
         self.name = name
         self.set_price(price)
@@ -21,6 +22,7 @@ class ProductWithProperty:
     """
     Клас, що використовує декоратор @property для управління ціною товару.
     """
+    
     def __init__(self, name: str, price: float) -> None:
         self.name = name
         self.price = price
@@ -42,6 +44,7 @@ class PriceDescriptor:
     """
     Дескриптор, що контролює встановлення та отримання значення ціни товару.
     """
+    
     def __init__(self, name: str) -> None:
         self.name = name
 
