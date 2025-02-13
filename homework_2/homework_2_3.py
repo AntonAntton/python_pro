@@ -6,9 +6,6 @@ from typing import List, Optional
 def analyze_module(module_name: str) -> None:
     """
     Аналізує заданий модуль, виводячи його функції та класи.
-
-    :param module_name: Назва модуля, який потрібно проаналізувати.
-    :return: Нічого не повертає (None).
     """
     try:
         # Завантажуємо модуль за допомогою importlib
