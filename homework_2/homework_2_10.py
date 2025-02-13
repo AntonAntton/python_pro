@@ -8,16 +8,13 @@ class SingletonMeta(type):
     def __call__(cls, *args, **kwargs) -> object:
         """
         Перевизначає виклик класу для створення лише одного екземпляра.
-
-        :param args: Параметри для конструктора класу.
-        :param kwargs: Іменовані параметри для конструктора класу.
-        :return: Єдиний екземпляр класу.
         """
         if cls not in cls.instances:
             # Створюємо новий екземпляр, якщо він ще не існує
             instance = super().__call__(*args, **kwargs)
             cls.instances[cls] = instance
         return cls.instances[cls]
+
 
 class Singleton(metaclass=SingletonMeta):
     """
